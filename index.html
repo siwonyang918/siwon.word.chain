@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>siwon 끝말잇기</title>
-    <meta name="description" content="친구 또는 봇과 대결하는 한국어 끝말잇기 웹게임입니다. 하나의 단어장으로 제한 시간 안에 단어를 이어가며 미션 글자 점수를 겨뤄보세요.">
-    <meta name="keywords" content="siwon 끝말잇기, 시원 끝말잇기, 끝말잇기, 끝말잇기 게임, 친구 끝말잇기, 온라인 끝말잇기, 한국어 게임, 단어 게임, 웹게임">
+    <title>siwon.word.chain</title>
+    <meta name="description" content="친구 또는 봇과 대결하고, 점수로 코인을 모아 의상과 아이템을 얻는 한국어 끝말잇기 웹게임입니다.">
+    <meta name="keywords" content="siwon.word.chain, siwon 끝말잇기, 시원 끝말잇기, 끝말잇기 게임, 친구 끝말잇기, 온라인 끝말잇기, 한국어 게임, 단어 게임, 웹게임">
     <meta name="robots" content="index, follow">
-                            <link rel="canonical" href="https://siwonyang918.github.io/siwon-word-chain/">
-<meta property="og:title" content="siwon 끝말잇기">
-    <meta property="og:description" content="친구 또는 봇과 대결하는 한국어 끝말잇기 웹게임입니다.">
-    <meta property="og:site_name" content="siwon 끝말잇기">
+        <link rel="canonical" href="https://siwonyang918.github.io/siwon.word.chain/">
+<meta property="og:title" content="siwon.word.chain">
+    <meta property="og:description" content="친구 또는 봇과 대결하고 코인으로 의상과 아이템을 모으는 한국어 끝말잇기 웹게임입니다.">
+    <meta property="og:site_name" content="siwon.word.chain">
     <meta property="og:type" content="website">
-                            <meta property="og:url" content="https://siwonyang918.github.io/siwon-word-chain/">
+        <meta property="og:url" content="https://siwonyang918.github.io/siwon.word.chain/">
 <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="siwon 끝말잇기">
-    <meta name="twitter:description" content="친구와 온라인으로 하거나 봇과 혼자 즐기는 한국어 끝말잇기 웹게임입니다.">
-    <link rel="alternate" hreflang="ko" href="https://siwonyang918.github.io/siwon-word-chain/">
+    <meta name="twitter:title" content="siwon.word.chain">
+    <meta name="twitter:description" content="친구와 온라인으로 하거나 봇과 혼자 즐기는 한국어 끝말잇기 아레나입니다.">
+    <link rel="alternate" hreflang="ko" href="https://siwonyang918.github.io/siwon.word.chain/">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "VideoGame",
-        "name": "siwon 끝말잇기",
-        "alternateName": ["시원 끝말잇기", "Siwon Word Chain"],
-        "url": "https://siwonyang918.github.io/siwon-word-chain/",
-        "description": "친구와 온라인으로 하거나 봇과 혼자 즐기는 한국어 끝말잇기 웹게임입니다.",
+        "name": "siwon.word.chain",
+        "alternateName": ["siwon 끝말잇기", "시원 끝말잇기", "Siwon Word Chain"],
+        "url": "https://siwonyang918.github.io/siwon.word.chain/",
+        "description": "친구와 온라인으로 하거나 봇과 혼자 즐기고, 코인으로 의상과 아이템을 모으는 한국어 끝말잇기 웹게임입니다.",
         "applicationCategory": "GameApplication",
         "operatingSystem": "Web",
         "gamePlatform": "Web browser",
@@ -41,57 +41,122 @@
 </head>
 <body>
     <div id="game-container">
-        <header id="game-header">
-            <div id="title-row">
-                <h1>siwon 끝말잇기</h1>
-                <div id="connection-pill">혼자</div>
+        <header id="top-bar">
+            <div id="brand-block">
+                <div id="brand-mark">끝</div>
+                <div>
+                    <h1>siwon.word.chain</h1>
+                    <p>끝말잇기 아레나</p>
+                </div>
             </div>
 
-            <div id="mode-tabs" aria-label="게임 모드">
-                <button id="solo-mode-btn" class="mode-btn active" type="button">혼자</button>
-                <button id="online-mode-btn" class="mode-btn" type="button">친구</button>
-            </div>
-
-            <section id="online-panel" hidden>
-                <div class="online-row">
-                    <button id="create-room-btn" type="button">방 만들기</button>
-                    <input id="room-code-input" type="text" placeholder="원하는 방 이름 또는 초대 링크">
-                    <button id="join-room-btn" type="button">참가</button>
+            <section id="account-panel" aria-label="로그인">
+                <div id="account-summary">
+                    <span id="nickname-display">손님</span>
+                    <strong><span id="coin-display">0</span> COIN</strong>
                 </div>
-                <div class="online-row invite-row">
-                    <input id="invite-link-input" type="text" readonly placeholder="친구에게 보낼 링크">
-                    <button id="copy-link-btn" type="button">복사</button>
+                <div id="login-row">
+                    <input id="account-name-input" type="text" maxlength="12" placeholder="닉네임">
+                    <button id="login-btn" type="button">로그인</button>
                 </div>
-                <div id="online-status">방 이름을 쓰고 방 만들기를 누르면 원하는 링크 이름을 쓸 수 있습니다.</div>
             </section>
-
-            <div class="header-row">
-                <div class="info-box">점수: <span id="score-display">0</span>점</div>
-                <div class="info-box">남은 시간: <span id="time-display">10</span>초</div>
-            </div>
-            <div class="header-row">
-                <div class="info-box">미션 글자: <span id="mission-display">-</span></div>
-            </div>
-            <button id="start-btn" type="button">게임 시작</button>
         </header>
 
-        <main id="chat-window">
-            <div class="system-message">게임 시작 버튼을 눌러주세요!</div>
-        </main>
+        <nav id="mode-tabs" aria-label="게임 모드">
+            <button id="solo-mode-btn" class="mode-btn active" type="button">봇 대전</button>
+            <button id="online-mode-btn" class="mode-btn" type="button">친구 대전</button>
+        </nav>
 
-        <footer id="input-container">
-            <input type="text" id="word-input" placeholder="단어를 입력하세요..." disabled>
-            <button id="send-btn" disabled type="button">전송</button>
-        </footer>
+        <main id="arena-layout">
+            <aside class="side-panel" id="player-panel">
+                <div class="panel-label">PLAYER</div>
+                <div class="avatar-frame" id="player-avatar">나</div>
+                <h2 id="player-name">손님</h2>
+                <div class="score-chip"><span id="player-score">0</span>점</div>
+                <div class="equip-line">착용: <span id="equipped-name">기본 후드</span></div>
+
+                <div id="quick-items">
+                    <button id="use-hint-btn" type="button">힌트 <span id="hint-count">0</span></button>
+                    <button id="use-time-btn" type="button">시간 <span id="time-count">0</span></button>
+                    <button id="use-mission-btn" type="button">미션 <span id="mission-count">0</span></button>
+                    <button id="use-coin-btn" type="button">코인 <span id="coin-count">0</span></button>
+                </div>
+            </aside>
+
+            <section id="play-panel">
+                <div id="round-header">
+                    <div>
+                        <span class="small-label">남은 시간</span>
+                        <strong><span id="time-display">10</span>초</strong>
+                    </div>
+                    <div id="connection-pill">혼자</div>
+                    <div>
+                        <span class="small-label">미션</span>
+                        <strong id="mission-display">-</strong>
+                    </div>
+                </div>
+
+                <div id="timer-track">
+                    <div id="timer-fill"></div>
+                </div>
+
+                <section id="online-panel" hidden>
+                    <div class="online-row">
+                        <input id="room-code-input" type="text" placeholder="방 이름 또는 초대 링크">
+                        <button id="create-room-btn" type="button">방 만들기</button>
+                        <button id="join-room-btn" type="button">참가</button>
+                    </div>
+                    <div class="online-row invite-row">
+                        <input id="invite-link-input" type="text" readonly placeholder="친구에게 보낼 링크">
+                        <button id="copy-link-btn" type="button">복사</button>
+                    </div>
+                    <div id="online-status">방 이름을 쓰면 링크 뒤에 #방이름만 붙습니다.</div>
+                </section>
+
+                <div id="word-board">
+                    <div id="turn-banner">게임 시작을 눌러주세요</div>
+                    <div id="last-word-display">READY</div>
+                    <div id="rule-strip">
+                        <span>시작 글자 <strong id="required-display">자유</strong></span>
+                        <span>사용 단어 <strong id="used-count-display">0</strong></span>
+                    </div>
+                </div>
+
+                <div id="status-feed" aria-live="polite"></div>
+                <div id="word-stream" aria-label="단어 기록"></div>
+
+                <footer id="input-container">
+                    <input type="text" id="word-input" placeholder="단어 입력" disabled>
+                    <button id="send-btn" disabled type="button">입력</button>
+                </footer>
+
+                <button id="start-btn" type="button">게임 시작</button>
+            </section>
+
+            <aside class="side-panel" id="opponent-panel">
+                <div class="panel-label">RIVAL</div>
+                <div class="avatar-frame rival" id="opponent-avatar">봇</div>
+                <h2 id="opponent-name">단어 봇</h2>
+                <div class="score-chip rival"><span id="opponent-score">0</span>점</div>
+
+                <section id="shop-panel">
+                    <div class="shop-heading">
+                        <strong>상점</strong>
+                        <button id="random-box-btn" type="button">랜덤박스 80</button>
+                    </div>
+                    <div id="shop-list"></div>
+                </section>
+
+                <section id="inventory-panel">
+                    <strong>내 보관함</strong>
+                    <div id="inventory-list"></div>
+                </section>
+            </aside>
+        </main>
     </div>
 
     <script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
 

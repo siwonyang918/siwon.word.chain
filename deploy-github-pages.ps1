@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$repoName = "siwon-word-chain"
+$repoName = "siwon.word.chain"
 $project = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location -LiteralPath $project
 
